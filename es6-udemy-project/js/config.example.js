@@ -1,0 +1,1 @@
+export const APP_ID = 'app ID as indicated from the Weather API pages ';
