@@ -1,0 +1,29 @@
+{
+  "name": "js-cardio",
+  "version": "1.0.0",
+  "description": "Random tests and code pieces used as part of personal practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxnjorombe/js-cardio.git"
+  },
+  "keywords": [
+    "promises",
+    "arrays",
+    "hashes",
+    "interview questions",
+    "puzzles"
+  ],
+  "author": "Solomon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sxnjorombe/js-cardio/issues"
+  },
+  "homepage": "https://github.com/sxnjorombe/js-cardio#readme",
+  "dependencies": {
+    "jest": "^24.8.0"
+  }
+}
