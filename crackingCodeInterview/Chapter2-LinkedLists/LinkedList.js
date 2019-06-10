@@ -7,22 +7,20 @@ class Node{
 
 class LinkedList{
   constructor() {
-    this.root = null
+    this.root = null;
+    this.tail = null;
   };
 
   addNode(val) {
     const node = new Node(val);
     if(!this.root){
       this.root = node;
+      this.tail = node;
       return;
     }
 
-    let root = this.root;
-    while(root.next) {
-      root = root.next;
-    }
-
-    root.next = node;
+    this.tail.next = node;
+    this.tail = node;
   }
 
   deleteNode(val) {
