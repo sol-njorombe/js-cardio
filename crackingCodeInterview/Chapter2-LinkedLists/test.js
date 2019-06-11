@@ -29,3 +29,13 @@ describe('Remove Dups', () => {
     expect(slns.removeDupsSln1(testList())).toEqual(unrepeated());
   });
 });
+
+describe('Return Kth to last', () => {
+  test('solution 1: double loops', () => {
+    let list = testList();
+    expect(slns.KtoLastNode(list, 1).val).toEqual(5);
+    expect(slns.KtoLastNode(list, 4).val).toEqual(3);
+    expect(slns.KtoLastNode(list, 7).val).toEqual(2);
+    expect(slns.KtoLastNode(list, 20)).toEqual(null);
+  });
+});
