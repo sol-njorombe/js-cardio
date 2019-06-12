@@ -12,3 +12,8 @@ The list of words comes from the back-end.
 
 ## Optimization
 - To reduce the number of requests being sent to the backend, debounce the requests sent to the backend
+
+## Running the backend
+- from the root folder of the js-cardio repo run the command `npm run dictionary`
+- This is a node backend running on express js
+- It uses a json list of words, in the server folder
