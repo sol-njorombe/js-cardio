@@ -4,7 +4,8 @@
   "description": "Random tests and code pieces used as part of personal practice",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dictionary": "node autoSuggest/server"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,8 @@
   },
   "homepage": "https://github.com/sxnjorombe/js-cardio#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "jest": "^24.8.0"
   }
 }
