@@ -23,6 +23,15 @@ class LinkedList{
     this.tail = node;
   }
 
+  findNode(val) {
+    if(!this.root) return null;
+    let n = this.root;
+    while(n) {
+      if(n.val == val) return n;
+      n = n.next;
+    }
+  }
+
   deleteNode(val) {
     if(!this.root) { return; }
     if(this.root.val === val) {

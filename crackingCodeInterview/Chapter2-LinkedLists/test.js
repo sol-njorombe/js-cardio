@@ -39,3 +39,12 @@ describe('Return Kth to last', () => {
     expect(slns.KtoLastNode(list, 20)).toEqual(null);
   });
 });
+
+describe('Delete middle node', () => {
+  let list = testList();
+  let n = list.findNode(3);
+  slns.deleteMiddle(list, n);
+  let test = testList();
+  test.deleteNode(3);
+  expect(list).toEqual(test);
+});
