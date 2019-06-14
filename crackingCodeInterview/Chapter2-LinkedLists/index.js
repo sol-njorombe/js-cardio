@@ -80,6 +80,42 @@ function deleteMiddle(list, node) {
   }
 }
 
+/**
+ * Partition:
+ * Write code to partition a linked list around a value x such that all nodes
+ * less than x come before all nodes greater or equal to x
+ */
+
+
+/**
+ * sum list
+ * You have two numbers represented by a linked list, where each node contains a single
+ * digit the digits are stored in reverse order, such that the 1's digit is at the head
+ * of the list. Write a function to add the two numbers and return the sum as a linked list
+ *
+ * EXAMPLE 1
+ * Input (7 -> 1 -> 6) + (5 -> 9 -> 2) ie 617 + 295
+ * Output (2 -> 1 -> 9) ie 912
+ *
+ */
+
+
+/**
+ * Palindrome
+ * Implement a function to check whether a linked list makes a palindrome
+ */
+
+/**
+ * Intersection
+ * Given two (singly) linked lists, determine if the two lists intersect. Return the intersecting node
+ * Note the intersection is defined by reference not value
+ */
+
+/**
+ * Loop Detection
+ * Given a linked list which might contain a loop, implement an algorithm that returns the node beginning
+ * of the loop(if one exists)
+ */
 
 
 
