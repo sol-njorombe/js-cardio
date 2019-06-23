@@ -26,16 +26,6 @@ class Node {
     this.children.splice(index, 1);
   }
 
-  traverseBF(fn) {
-    // Revisit this. It feels wrong
-    this.children.forEach(child => {
-      fn(child);
-    });
-    this.children.forEach(child => {
-      child.traverseBF(fn);
-    })
-  }
-
   traverseDF(fn) {
     fn(this);
     this.children.forEach(child => {
@@ -54,9 +44,12 @@ class Tree {
   }
 
   traverseBF(fn) {
-    if(this.root) {
-      fn(this.root);
-      this.root.traverseBF(fn);
+    let nodeArr = [];
+    let node = this.root;
+    while(node) {
+      fn(node);
+      nodeArr.push(...node.children);
+      node = nodeArr.shift();
     }
   }
 }
