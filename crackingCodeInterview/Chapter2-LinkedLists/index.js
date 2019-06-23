@@ -9,6 +9,11 @@ let LinkedList = require('./LinkedList');
  * APPROACHES
  * ==========
  * 1. Save the values and if they appear again remove the node
+ *    - O(n) time complexity
+ *    - O(n) space complexity, but required 2 - 3n space
+ * 2. maintain a hash to check seen values and a pointer to the last unique.
+ *    - O(n) time complexity
+ *    - O(1) space complaxity (Only fixed amt of possible hash keys, and one pointer for last unique)
  */
 
 function removeDupsSln1(list) {
@@ -28,6 +33,25 @@ function removeDupsSln1(list) {
   return copy;
 }
 
+function removeDupsSln2(list) {
+  if(!list.root) return list;
+  let values = {};
+  values[list.root.val] = true;
+  let node = list.root.next;
+  let lastUnique = list.root;
+  while(node) {
+    if(!values[node.val]){
+      values[node.val] = true;
+      lastUnique.next = node;
+      lastUnique = node;
+    }
+    node = node.next;
+  }
+
+  lastUnique.next = null;
+  return list;
+}
+
 /**
  * Kth to last:
  * Implement an algorithm to find the K-th to last element of a singly
@@ -38,6 +62,9 @@ function removeDupsSln1(list) {
  * 1. Make two loops, the first to find the size the second to find the K-th node
  *    - O(n) Time Complexity
  *    - O(n) space complexity
+ * 2. Make two pointers for lead and tail. The lead will go forward by k steps then keep moving both the lead
+ *    and tails in same pace. When lead gets to the end we return the tail
+ *    - O(n) time complexity
  */
 
 function KtoLastNode(list, k) {
@@ -56,6 +83,21 @@ function KtoLastNode(list, k) {
     j++;
   }
   return null;
+}
+
+function KtoLastNodeSln2(list, k) {
+  let lead = list.root;
+  let tail = list.root;
+  for(let i = 0; i < k; i++) {
+    if(!lead) return null;
+    lead = lead.next
+  }
+
+  while(lead && tail) {
+    lead = lead.next;
+    tail = tail.next;
+  }
+  return tail;
 }
 
 /**
@@ -121,6 +163,8 @@ function deleteMiddle(list, node) {
 
 module.exports = {
   removeDupsSln1,
+  removeDupsSln2,
   KtoLastNode,
-  deleteMiddle
+  KtoLastNodeSln2,
+  deleteMiddle,
 }
