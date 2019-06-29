@@ -1,9 +1,4 @@
-class Node{
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
-}
+let Node = require('./Node');
 
 class LinkedList{
   constructor() {
